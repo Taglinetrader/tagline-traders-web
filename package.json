@@ -1,7 +1,6 @@
 {
   "name": "tagline-traders-web",
   "version": "0.1.0",
-  "proxy": "http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",

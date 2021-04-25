@@ -47,7 +47,9 @@ export const listProducts = (
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
     // {`/api/subcategory/2/product/${match.params.id}`;}
-    const { data } = await axios.get("/api/subcategory/2/product");
+    const { data } = await axios.get(
+      "http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/subcategory/2/product"
+    );
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -71,7 +73,9 @@ export const listProductDetailsByProductId = (productId) => async (
   try {
     console.log("Inside listProductDetailsByProductId : " + productId);
     dispatch({ type: PRODUCT_DETAILS_BY_PRODUCT_ID_REQUEST });
-    const { data } = await axios.get(`/api/product/${productId}`);
+    const { data } = await axios.get(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/product/${productId}`
+    );
 
     dispatch({
       type: PRODUCT_DETAILS_BY_PRODUCT_ID_SUCCESS,
@@ -92,7 +96,9 @@ export const listProductDetailsByProductId = (productId) => async (
 export const listProductsByCategoryId = (categoryId) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_BY_CATEGORY_ID_REQUEST });
-    const { data } = await axios.get(`/api/category/${categoryId}/product`);
+    const { data } = await axios.get(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/category/${categoryId}/product`
+    );
 
     dispatch({
       type: PRODUCT_LIST_BY_CATEGORY_ID_SUCCESS,
@@ -116,7 +122,7 @@ export const listProductsBySubCategoryId = (subCategoryId, productId) => async (
     dispatch({ type: PRODUCT_LIST_BY_SUB_CATEGORY_REQUEST });
     // {`/api/subcategory/2/product/${match.params.id}`;}
     const { data } = await axios.get(
-      `/api/subcategory/${subCategoryId}/product`
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/subcategory/${subCategoryId}/product`
     );
 
     dispatch({
@@ -149,7 +155,7 @@ export const listProductDetailsBySubCategoryIdProductId = (
     dispatch({ type: PRODUCT_DETAILS_BY_SUBCATEGORY_ID_PRODUCT_ID_REQUEST });
 
     const { data } = await axios.get(
-      `/api/subcategory/${subCategoryId}/product/${productId}`
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/subcategory/${subCategoryId}/product/${productId}`
     );
 
     dispatch({
@@ -174,7 +180,7 @@ export const listProductDetails = (subCategoryId, productId) => async (
     dispatch({ type: PRODUCT_DETAILS_BY_SUBCATEGORY_ID_PRODUCT_ID_REQUEST });
 
     const { data } = await axios.get(
-      `api/subcategory/${subCategoryId}/product/${productId}`
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/subcategory/${subCategoryId}/product/${productId}`
     );
 
     dispatch({
@@ -351,7 +357,11 @@ export const createProductReview = (productId, review) => async (
       },
     };
 
-    await axios.post(`/api/products/${productId}/reviews`, review, config);
+    await axios.post(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/products/${productId}/reviews`,
+      review,
+      config
+    );
 
     dispatch({
       type: PRODUCT_CREATE_REVIEW_SUCCESS,
@@ -375,7 +385,9 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST });
 
-    const { data } = await axios.get(`/api/products/top`);
+    const { data } = await axios.get(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/products/top`
+    );
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
@@ -396,7 +408,9 @@ export const listBestSellerProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_BEST_SELLER_REQUEST });
 
-    const { data } = await axios.get(`/api/product/best-seller`);
+    const { data } = await axios.get(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/product/best-seller`
+    );
 
     dispatch({
       type: PRODUCT_LIST_BEST_SELLER_SUCCESS,

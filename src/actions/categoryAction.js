@@ -18,7 +18,9 @@ export const listCategories = () => async (dispatch) => {
   try {
     dispatch({ type: CATEGORY_LIST_REQUEST });
 
-    const { data } = await axios.get(`/api/category`);
+    const { data } = await axios.get(
+      `http://tagline-traders-api-qa.eba-i4mamkxc.us-east-1.elasticbeanstalk.com/api/category`
+    );
 
     dispatch({
       type: CATEGORY_LIST_SUCCESS,
